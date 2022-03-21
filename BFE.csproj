@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38944DD5-9365-4BB7-87DD-F4CE08D4687B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BFE</RootNamespace>
+    <AssemblyName>BFE</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Accounting.xaml.cs">
+      <DependentUpon>Accounting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClassDB.cs" />
+    <Compile Include="Modelbfe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelbfe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelbfe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelbfe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelbfe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="W1.xaml.cs">
+      <DependentUpon>W1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w10.xaml.cs">
+      <DependentUpon>w10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w11.xaml.cs">
+      <DependentUpon>w11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w12.xaml.cs">
+      <DependentUpon>w12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w13.xaml.cs">
+      <DependentUpon>w13.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w14.xaml.cs">
+      <DependentUpon>w14.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w15.xaml.cs">
+      <DependentUpon>w15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="W2.xaml.cs">
+      <DependentUpon>W2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="W3.xaml.cs">
+      <DependentUpon>W3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w4.xaml.cs">
+      <DependentUpon>w4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w5.xaml.cs">
+      <DependentUpon>w5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w6.xaml.cs">
+      <DependentUpon>w6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w7.xaml.cs">
+      <DependentUpon>w7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w8.xaml.cs">
+      <DependentUpon>w8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w9.xaml.cs">
+      <DependentUpon>w9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Кисломолочные_продукты.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Масло.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Молоко_и_сливки.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Молочные_консервы.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Сухие_молочные_продукты.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Сыры.cs">
+      <DependentUpon>Modelbfe.tt</DependentUpon>
+    </Compile>
+    <Page Include="Accounting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="W1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w13.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w14.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w15.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="W2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="W3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Modelbfe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelbfe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelbfe.edmx.diagram">
+      <DependentUpon>Modelbfe.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BFE IMG\Эскиз BFE.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BFE IMG\274969.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="274969.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modelbfe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Modelbfe.Context.cs</LastGenOutput>
+      <DependentUpon>Modelbfe.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modelbfe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelbfe.edmx</DependentUpon>
+      <LastGenOutput>Modelbfe.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

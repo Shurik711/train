@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище bfeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Кисломолочные_продукты">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Кефир_обезжиренный" Type="nvarchar" MaxLength="50" />
+          <Property Name="Кефир_2_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Кефир_3_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Йогурт_клубничный_2_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Йогурт_персиковый_2_5" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Масло">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Масло_72_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Масло_82_5" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Молоко_и_сливки">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_обезжиренное" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_2_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_3_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Сливки_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="Сливки_20" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Молочные_консервы">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_сгущенное" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_концентрированное_2_5" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Сухие_молочные_продукты">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Молоко_сухое_20" Type="nvarchar" MaxLength="50" />
+          <Property Name="Сливки_сухие_42" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Сыры">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Дата" Type="nvarchar" MaxLength="50" />
+          <Property Name="Пармезан" Type="nvarchar" MaxLength="50" />
+          <Property Name="Российский" Type="nvarchar" MaxLength="50" />
+          <Property Name="Гауда" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Кисломолочные_продукты_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Кисломолочные_продукты" Type="Self.Кисломолочные_продукты" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Кисломолочные_продукты">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Масло_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Масло" Type="Self.Масло" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Масло">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Молочные_консервы_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Молочные_консервы" Type="Self.Молочные_консервы" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Молочные_консервы">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сухие_молочные_продукты_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Сухие_молочные_продукты" Type="Self.Сухие_молочные_продукты" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Сухие_молочные_продукты">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сыры_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Сыры" Type="Self.Сыры" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Сыры">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище bfeModelContainer">
+          <EntitySet Name="Кисломолочные_продукты" EntityType="Self.Кисломолочные_продукты" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Масло" EntityType="Self.Масло" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Молоко_и_сливки" EntityType="Self.Молоко_и_сливки" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Молочные_консервы" EntityType="Self.Молочные_консервы" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Сухие_молочные_продукты" EntityType="Self.Сухие_молочные_продукты" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Сыры" EntityType="Self.Сыры" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Кисломолочные_продукты_Молоко_и_сливки" Association="Self.FK_Кисломолочные_продукты_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Кисломолочные_продукты" EntitySet="Кисломолочные_продукты" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Масло_Молоко_и_сливки" Association="Self.FK_Масло_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Масло" EntitySet="Масло" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Молочные_консервы_Молоко_и_сливки" Association="Self.FK_Молочные_консервы_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Молочные_консервы" EntitySet="Молочные_консервы" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сухие_молочные_продукты_Молоко_и_сливки" Association="Self.FK_Сухие_молочные_продукты_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Сухие_молочные_продукты" EntitySet="Сухие_молочные_продукты" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сыры_Молоко_и_сливки" Association="Self.FK_Сыры_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Сыры" EntitySet="Сыры" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bfeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Кисломолочные_продукты">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Кефир_обезжиренный" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Кефир_2_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Кефир_3_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Йогурт_клубничный_2_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Йогурт_персиковый_2_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Молоко_и_сливки" Relationship="Self.FK_Кисломолочные_продукты_Молоко_и_сливки" FromRole="Кисломолочные_продукты" ToRole="Молоко_и_сливки" />
+        </EntityType>
+        <EntityType Name="Масло">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Масло_72_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Масло_82_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Молоко_и_сливки" Relationship="Self.FK_Масло_Молоко_и_сливки" FromRole="Масло" ToRole="Молоко_и_сливки" />
+        </EntityType>
+        <EntityType Name="Молоко_и_сливки">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_обезжиренное" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_2_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_3_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Сливки_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Сливки_20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Кисломолочные_продукты" Relationship="Self.FK_Кисломолочные_продукты_Молоко_и_сливки" FromRole="Молоко_и_сливки" ToRole="Кисломолочные_продукты" />
+          <NavigationProperty Name="Масло" Relationship="Self.FK_Масло_Молоко_и_сливки" FromRole="Молоко_и_сливки" ToRole="Масло" />
+          <NavigationProperty Name="Молочные_консервы" Relationship="Self.FK_Молочные_консервы_Молоко_и_сливки" FromRole="Молоко_и_сливки" ToRole="Молочные_консервы" />
+          <NavigationProperty Name="Сухие_молочные_продукты" Relationship="Self.FK_Сухие_молочные_продукты_Молоко_и_сливки" FromRole="Молоко_и_сливки" ToRole="Сухие_молочные_продукты" />
+          <NavigationProperty Name="Сыры" Relationship="Self.FK_Сыры_Молоко_и_сливки" FromRole="Молоко_и_сливки" ToRole="Сыры" />
+        </EntityType>
+        <EntityType Name="Молочные_консервы">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_сгущенное" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_концентрированное_2_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Молоко_и_сливки" Relationship="Self.FK_Молочные_консервы_Молоко_и_сливки" FromRole="Молочные_консервы" ToRole="Молоко_и_сливки" />
+        </EntityType>
+        <EntityType Name="Сухие_молочные_продукты">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Молоко_сухое_20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Сливки_сухие_42" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Молоко_и_сливки" Relationship="Self.FK_Сухие_молочные_продукты_Молоко_и_сливки" FromRole="Сухие_молочные_продукты" ToRole="Молоко_и_сливки" />
+        </EntityType>
+        <EntityType Name="Сыры">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Дата" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Пармезан" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Российский" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Гауда" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Молоко_и_сливки" Relationship="Self.FK_Сыры_Молоко_и_сливки" FromRole="Сыры" ToRole="Молоко_и_сливки" />
+        </EntityType>
+        <Association Name="FK_Кисломолочные_продукты_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Кисломолочные_продукты" Type="Self.Кисломолочные_продукты" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Кисломолочные_продукты">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Масло_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Масло" Type="Self.Масло" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Масло">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Молочные_консервы_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Молочные_консервы" Type="Self.Молочные_консервы" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Молочные_консервы">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сухие_молочные_продукты_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Сухие_молочные_продукты" Type="Self.Сухие_молочные_продукты" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Сухие_молочные_продукты">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сыры_Молоко_и_сливки">
+          <End Role="Молоко_и_сливки" Type="Self.Молоко_и_сливки" Multiplicity="1" />
+          <End Role="Сыры" Type="Self.Сыры" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Молоко_и_сливки">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Сыры">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bfeEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Кисломолочные_продукты" EntityType="Self.Кисломолочные_продукты" />
+          <EntitySet Name="Масло" EntityType="Self.Масло" />
+          <EntitySet Name="Молоко_и_сливки" EntityType="Self.Молоко_и_сливки" />
+          <EntitySet Name="Молочные_консервы" EntityType="Self.Молочные_консервы" />
+          <EntitySet Name="Сухие_молочные_продукты" EntityType="Self.Сухие_молочные_продукты" />
+          <EntitySet Name="Сыры" EntityType="Self.Сыры" />
+          <AssociationSet Name="FK_Кисломолочные_продукты_Молоко_и_сливки" Association="Self.FK_Кисломолочные_продукты_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Кисломолочные_продукты" EntitySet="Кисломолочные_продукты" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Масло_Молоко_и_сливки" Association="Self.FK_Масло_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Масло" EntitySet="Масло" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Молочные_консервы_Молоко_и_сливки" Association="Self.FK_Молочные_консервы_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Молочные_консервы" EntitySet="Молочные_консервы" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сухие_молочные_продукты_Молоко_и_сливки" Association="Self.FK_Сухие_молочные_продукты_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Сухие_молочные_продукты" EntitySet="Сухие_молочные_продукты" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сыры_Молоко_и_сливки" Association="Self.FK_Сыры_Молоко_и_сливки">
+            <End Role="Молоко_и_сливки" EntitySet="Молоко_и_сливки" />
+            <End Role="Сыры" EntitySet="Сыры" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище bfeModelContainer" CdmEntityContainer="bfeEntities2">
+          <EntitySetMapping Name="Кисломолочные_продукты">
+            <EntityTypeMapping TypeName="bfeModel.Кисломолочные_продукты">
+              <MappingFragment StoreEntitySet="Кисломолочные_продукты">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Кефир_обезжиренный" ColumnName="Кефир_обезжиренный" />
+                <ScalarProperty Name="Кефир_2_5" ColumnName="Кефир_2_5" />
+                <ScalarProperty Name="Кефир_3_2" ColumnName="Кефир_3_2" />
+                <ScalarProperty Name="Йогурт_клубничный_2_5" ColumnName="Йогурт_клубничный_2_5" />
+                <ScalarProperty Name="Йогурт_персиковый_2_5" ColumnName="Йогурт_персиковый_2_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Масло">
+            <EntityTypeMapping TypeName="bfeModel.Масло">
+              <MappingFragment StoreEntitySet="Масло">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Масло_72_5" ColumnName="Масло_72_5" />
+                <ScalarProperty Name="Масло_82_5" ColumnName="Масло_82_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Молоко_и_сливки">
+            <EntityTypeMapping TypeName="bfeModel.Молоко_и_сливки">
+              <MappingFragment StoreEntitySet="Молоко_и_сливки">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Молоко_обезжиренное" ColumnName="Молоко_обезжиренное" />
+                <ScalarProperty Name="Молоко_2_5" ColumnName="Молоко_2_5" />
+                <ScalarProperty Name="Молоко_3_2" ColumnName="Молоко_3_2" />
+                <ScalarProperty Name="Сливки_10" ColumnName="Сливки_10" />
+                <ScalarProperty Name="Сливки_20" ColumnName="Сливки_20" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Молочные_консервы">
+            <EntityTypeMapping TypeName="bfeModel.Молочные_консервы">
+              <MappingFragment StoreEntitySet="Молочные_консервы">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Молоко_сгущенное" ColumnName="Молоко_сгущенное" />
+                <ScalarProperty Name="Молоко_концентрированное_2_5" ColumnName="Молоко_концентрированное_2_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сухие_молочные_продукты">
+            <EntityTypeMapping TypeName="bfeModel.Сухие_молочные_продукты">
+              <MappingFragment StoreEntitySet="Сухие_молочные_продукты">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Молоко_сухое_20" ColumnName="Молоко_сухое_20" />
+                <ScalarProperty Name="Сливки_сухие_42" ColumnName="Сливки_сухие_42" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сыры">
+            <EntityTypeMapping TypeName="bfeModel.Сыры">
+              <MappingFragment StoreEntitySet="Сыры">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Пармезан" ColumnName="Пармезан" />
+                <ScalarProperty Name="Российский" ColumnName="Российский" />
+                <ScalarProperty Name="Гауда" ColumnName="Гауда" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

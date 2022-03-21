@@ -1,0 +1,40 @@
+﻿<Window x:Class="BFE.Accounting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BFE"
+        mc:Ignorable="d"
+        Title="Accounting" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="274969.jpg"/>
+    </Window.Background>
+    <Grid>
+
+        <StackPanel>
+            <Button x:Name="exit" Height="38" Content="Выход" Margin="620,375,20,370" FontSize="20" Background="Chocolate" Click="exit_Click"></Button>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="milk" Height="38" Content="Молоко и сливки" Margin="250,20,250,20" FontSize="20" Background="Chocolate" Click="milk_Click"/>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="butter" Height="38" Content="Масло" Margin="250,70,250,70" FontSize="20" Background="Chocolate" Click="butter_Click"></Button>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="fermented" Height="38" Content="Кисломолочные продукты" Margin="250,120,250,120" FontSize="20" Background="Chocolate" Click="fermented_Click"></Button>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="cheese" Height="38" Content="Сыры" Margin="250,170,250,170" FontSize="20" Background="Chocolate" Click="cheese_Click"></Button>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="canned" Height="38" Content="Молочные консервы" Margin="250,220,250,220" FontSize="20" Background="Chocolate" Click="canned_Click"/>
+        </StackPanel>
+        <StackPanel>
+            <Button x:Name="powdered" Height="38" Content="Сухие молочные продукты" Margin="250,270,250,270" FontSize="20" Background="Chocolate" Click="powdered_Click"></Button>
+        </StackPanel>
+       
+
+
+
+    </Grid>
+</Window>

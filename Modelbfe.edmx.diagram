@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f9bb9fe7c7043f3a60c041d2893f356" Name="Diagram1">
+        <EntityTypeShape EntityType="bfeModel.Кисломолочные_продукты" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfeModel.Масло" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfeModel.Молоко_и_сливки" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfeModel.Молочные_консервы" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfeModel.Сухие_молочные_продукты" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bfeModel.Сыры" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <AssociationConnector Association="bfeModel.FK_Кисломолочные_продукты_Молоко_и_сливки" ManuallyRouted="false" />
+        <AssociationConnector Association="bfeModel.FK_Масло_Молоко_и_сливки" ManuallyRouted="false" />
+        <AssociationConnector Association="bfeModel.FK_Молочные_консервы_Молоко_и_сливки" ManuallyRouted="false" />
+        <AssociationConnector Association="bfeModel.FK_Сухие_молочные_продукты_Молоко_и_сливки" ManuallyRouted="false" />
+        <AssociationConnector Association="bfeModel.FK_Сыры_Молоко_и_сливки" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

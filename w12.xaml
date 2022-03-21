@@ -1,0 +1,40 @@
+﻿<Window x:Class="BFE.w12"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BFE"
+        mc:Ignorable="d"
+        Title="w12" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Молочные консервы" FontSize="18" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <DataGrid FontSize="16" Grid.Row="1" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" x:Name="MyDataGridCanned"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Width="80" Header="id"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Дата}" Width="100" Header="Дата"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Молоко_сгущенное}" Width="*" Header="Молоко сгущенное"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Молоко_концентрированное_2_5}" Width="*" Header="Молоко концентрированное 2.5%"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="4">
+            <Button x:Name="BtnAddVilet" Margin="80,0" Content="Добавить" Width="120" FontSize="18" Click="BtnAdd_Click"></Button>
+            <Button x:Name="BtnSave" Margin="10,0" Content="Сохранить" Width="120" FontSize="18" Click="BtnSave_Click"></Button>
+            <Button x:Name="BtnExit" Margin="10,0" Content="Выход" Width="120" FontSize="18" Click="BtnExit_Click"></Button>
+
+        </StackPanel>
+    </Grid>
+</Window>
